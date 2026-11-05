@@ -79,7 +79,7 @@ function painData(data) {
   });
 }
 
-//Mostrar y ocultar, no he sabido hacerlo, lo he obtenido de la IA
+//Boton para la primera parte del ejercicio
 const boton1 = document.querySelector("#boton1");
 
 let mostrandoTerremotos = false;
@@ -118,7 +118,7 @@ boton1.addEventListener("click", () => {
       });
   }
 });
-
+//Bton para la 2ª parte del ejercicio
 const boton2 = document.querySelector("#boton2");
 //Descubrir la parte del formulario una vez le des al boton2
 boton2.addEventListener("click", () => {
