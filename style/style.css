@@ -45,12 +45,22 @@ button:hover {
   background-color: #7b96b2;
 }
 #login {
-  margin: 100px auto 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: auto;
+  margin: 40px auto;
   padding: 25px;
   max-width: 350px;
   text-align: center;
   background-color: #f0f0f0;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#login h2 {
+  margin: 0;
+  color: #34495e;
 }
 
 #formLogin {
@@ -59,9 +69,41 @@ button:hover {
   gap: 12px;
 }
 
-#formLogin input,
+#formLogin input {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
 #login button {
   padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+#message {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Para que hidden funcione aunque el elemento tenga display */
+[hidden] {
+  display: none !important;
+}
+
+#listaFavoritos {
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  font-size: 14px;
+}
+
+#listaFavoritos li {
+  margin: 8px 0;
+}
+
+#listaFavoritos button {
+  padding: 3px 8px;
 }
 #contenedorContinentes {
   display: flex;

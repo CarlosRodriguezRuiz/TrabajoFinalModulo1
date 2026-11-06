@@ -67,15 +67,27 @@ function painData(data) {
       color = "purple";
     }
 
+    // Popup con botón de favoritos
+    const contenidoPopup = document.createElement("div");
+    contenidoPopup.innerHTML = `
+        <p>Lugar: ${lugar}</p>
+        <p>Magnitud: ${magnitud}</p>
+      `;
+    const botonFavorito = document.createElement("button");
+    botonFavorito.innerText = "⭐ Añadir a favoritos";
+    botonFavorito.addEventListener("click", () => {
+      addToFavorites({ id: pin.id, lugar: lugar, magnitud: magnitud });
+    });
+    contenidoPopup.appendChild(botonFavorito);
+
     L.circleMarker(coords, {
       color: color,
       fillColor: color,
       fillOpacity: 0.8,
       radius: 8,
-    }).addTo(grupoTerremotos).bindPopup(`
-        Lugar: ${lugar}
-        Magnitud: ${magnitud}
-      `);
+    })
+      .addTo(grupoTerremotos)
+      .bindPopup(contenidoPopup);
   });
 }
 

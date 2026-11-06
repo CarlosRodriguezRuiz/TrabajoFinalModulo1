@@ -26,10 +26,12 @@
 
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore-compat.js"></script>
 
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script defer src="script.js"></script>
     <script defer src="grafica.js"></script>
+    <script defer src="firebase.js"></script>
   </head>
 
   <body>
@@ -47,11 +49,18 @@
           required
         />
         <button type="submit">Iniciar sesión</button>
+        <button type="button" id="registro">Registrarse</button>
       </form>
 
       <p id="message">No hay usuarios en el sistema</p>
 
-      <button id="salir">Cerrar sesión</button>
+      <button id="salir" hidden>Cerrar sesión</button>
+
+      <!-- FAVORITOS, SOLO SE VEN CON SESIÓN INICIADA -->
+      <div id="favoritos" hidden>
+        <button id="verFavoritos">Ver mis favoritos</button>
+        <ul id="listaFavoritos"></ul>
+      </div>
     </section>
     <section>
       <aside>
